@@ -1,0 +1,14 @@
+{
+  "name": "coding_exercises",
+  "version": "1.0.0",
+  "description": "Coding exercises with unit tests using Jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Himanshu",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^22.0.1"
+  }
+}
