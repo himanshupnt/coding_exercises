@@ -1,3 +1,13 @@
+#Problem -
+
+##### From [Leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/)
+
+Say you have an array for which the ith element is the price of a given stock on day i.
+
+Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times). However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
+
+#Solution Overview And Analysis -
+
 ## Requirements
 
 Given an array, whose index represent i'th day and corresponding element represents a stock's price for that day, we've to find maximum profit.  
@@ -31,9 +41,9 @@ E (edge cases) -
 We can see that to make max profit, a stock can be purchased when the next value in array is greater than current value and sold when the next value in array is less than current value.
 
 > create totalProfit = 0  
-> loop through the array with starting index = 1  
->  ---------if val at curIdx > val at prevIdx  
->  --------------totalProfit += val at curIdx - val at prevIdx  
+> loop through the array  
+>  ---------if val at curIdx < val at nextIdx  
+>  --------------totalProfit += val at nextIdx - val at curIdx  
 > return totalProfit
 
 ### Justification of strategy
@@ -57,11 +67,10 @@ This leads to a simple iterative solution to this problem.
 > create totalProfit = 0  
 > if input.length === 0, return “error, empty input”  
 > if input.length === 1, return “not enough data, no profit can be made”  
-> loop through the array with starting index = 1
-
-> ---------if val at curIdx or val at prevIdx is not a number, return “error, invalid input”  
-> ---------if val at curIdx > val at prevIdx  
-> --------------totalProfit += val at curIdx - val at prevIdx  
+> loop through the array  
+> ---------if val at curIdx or val at nextIdx is not a number, return “error, invalid input”  
+> ---------if val at curIdx < val at nextIdx  
+> --------------totalProfit += val at nextIdx - val at curIdx  
 > return totalProfit
 
 ## Actual implementation
